@@ -1,9 +1,27 @@
 import './App.css';
+import Cart from './components/Cart';
+import Navbar from './components/Navbar';
+import Products from './components/Products';
 
-function App() {
+import { NumberProvider } from './contexts/NumberContext';
+import { ProductsProvider } from './contexts/Products.Context';
+
+
+
+const App =() => {
   return (
     <div className="App">
-     
+      
+
+      <ProductsProvider>
+      <NumberProvider>
+        <Navbar/>
+        <Products/>
+        <Cart/>
+      </NumberProvider>
+      </ProductsProvider>
+      
+
     </div>
   );
 }
