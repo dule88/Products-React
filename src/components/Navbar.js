@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import NumberContext from "../contexts/NumberContext";
+import CartContexts from "../contexts/CartContexts";
 import ProductsContext from "../contexts/Products.Context";
 
 const Navbar = () => {
 
-    const {numberTest} = useContext(NumberContext);
+    
     const {products, setProducts} = useContext(ProductsContext);
+    const  {cart, setCart} = useContext(CartContexts)
 
   return (
     <nav className="navbar navbar-expand-lg bg-dark-subtle">
@@ -23,10 +24,7 @@ const Navbar = () => {
                     <a className="nav-link" href="#">Products({products.length})</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Cart</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">TestNumber({numberTest})</a>
+                    <a className="nav-link" href="#">Cart({cart.length})</a>
                 </li>
             </ul>
         </div>

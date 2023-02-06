@@ -9,7 +9,7 @@ export const ProductsProvider = ({children}) => {
         const [products, setProducts] = useState ([]);
 
         useEffect(() => {
-          fetch('https://fakestoreapi.com/products')
+          fetch('https://fakestoreapi.com/products?limit=5')
           .then(res => res.json())
           .then(result => {
             setProducts(result);

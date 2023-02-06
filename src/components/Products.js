@@ -1,9 +1,14 @@
 import React, {useContext} from 'react'
 import ProductsContext from '../contexts/Products.Context';
+import CartContexts from '../contexts/CartContexts';
 
 
 const Products = () => {
 
+    const {products, setProducts} = useContext(ProductsContext);
+    const {cart, setCart} = useContext(CartContexts)
+
+    // FUNCTION THAT ADD ELEMENTS TO THE PRODUCTS LIST
     const formSubmit = (event) => {
         event.preventDefault();
 
@@ -16,7 +21,18 @@ const Products = () => {
         setProducts(prev => [...prev, newProduct])
     };
 
-    const {products, setProducts} = useContext(ProductsContext);
+    // FUNCTION THAT ADD ELEMENTS FROM PRODUCTS LIST TO THE CART LIST
+    const addToCart = (id) => {
+        const product = products.filter(p => {
+            if(p.id == id) {
+                return p;
+            }
+        })[0];
+
+        setCart(prev => [...prev, product]);
+    }
+
+    
 
   return (
     <div>
@@ -31,7 +47,8 @@ const Products = () => {
         
 
         <ul>
-            {products.map(product => <li key={product.id}> {product.title} {product.price} </li>)}
+            {/* PRINT ELEMENTS TO THE PRODUCTS LIST */}
+            {products.map(product => <li key={product.id}> {product.title} {product.price} <button className='btn btn-outline-primary m-1' onClick={ () => addToCart(product.id)}> Add to Cart</button> </li>)}
         </ul>
 
         <hr/>
