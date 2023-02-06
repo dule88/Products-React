@@ -1,0 +1,7 @@
+Created React Product APP
+Used API from https://fakestoreapi.com/ to use products in the App
+
+//Need to also Enhace the APP:
+  1. Some functionality need to be add
+  2. Need to add style to look nice
+  3. Need to use React Routs to separte Cart from Products
