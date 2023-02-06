@@ -48,13 +48,15 @@ const Products = () => {
   return (
     <div>
 
-        <h3>Products</h3>
+        <h3 className='my-3'>Products</h3>
 
-        <form onSubmit={formSubmit}>
-            <input type='text' placeholder='name' name='name'/>
-            <input type='number' placeholder='price' name='price'/>
-            <input type='submit' value='Dodaj'/>
+        <form onSubmit={formSubmit} className='row g-3 align-items-center mx-5 '>
+            <input className='col mx-1 form-control' type='text' placeholder='name' name='name'/>
+            <input className='col form-control' type='number' placeholder='price' name='price'/>
+            <input type='submit' value='Add' className='btn btn-outline-success mx-2 col-auto'/>
         </form>
+
+        <hr/>
         
 
         <ul>
@@ -62,8 +64,8 @@ const Products = () => {
             {products.map((product, idx) => {
                 return( 
                 <li key={product.id}> {product.title} {product.price} 
-                <button className='btn btn-outline-primary m-1' onClick={ () => addToCart(product.id)}> Add to Cart</button>  
-                <button className='btn btn-outline-primary m-1' onClick={ () => deleteFromProducts(idx)}> Delete</button>  
+                <button className='btn btn-outline-success m-1' onClick={ () => addToCart(product.id)}> Add</button>  
+                <button className='btn btn-outline-danger m-1' onClick={ () => deleteFromProducts(idx)}> Delete</button>  
                 </li>
                 )
             })
