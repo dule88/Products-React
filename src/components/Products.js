@@ -32,6 +32,17 @@ const Products = () => {
         setCart(prev => [...prev, product]);
     }
 
+     // FUNCTION THAT DELETE ELEMENTS FROM PRODUCTS LIST 
+     const deleteFromProducts = (idx) => {
+
+        setProducts(prev => {
+            let productsToDelete = [...prev];
+            productsToDelete.splice(idx, 1);
+            return productsToDelete;
+        })
+
+      };
+
     
 
   return (
@@ -48,7 +59,16 @@ const Products = () => {
 
         <ul>
             {/* PRINT ELEMENTS TO THE PRODUCTS LIST */}
-            {products.map(product => <li key={product.id}> {product.title} {product.price} <button className='btn btn-outline-primary m-1' onClick={ () => addToCart(product.id)}> Add to Cart</button> </li>)}
+            {products.map((product, idx) => {
+                return( 
+                <li key={product.id}> {product.title} {product.price} 
+                <button className='btn btn-outline-primary m-1' onClick={ () => addToCart(product.id)}> Add to Cart</button>  
+                <button className='btn btn-outline-primary m-1' onClick={ () => deleteFromProducts(idx)}> Delete</button>  
+                </li>
+                )
+            })
+            }
+        
         </ul>
 
         <hr/>
