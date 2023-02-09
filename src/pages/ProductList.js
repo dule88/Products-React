@@ -66,21 +66,36 @@ const Products = () => {
             <h1>Loading
             </h1>
             :
-            <ul>
-                {/* PRINT ELEMENTS TO THE PRODUCTS LIST */}
+            <table className="table table-dark table-hover container ">
 
+
+                <thead>
+                    <tr>
+                    <th className='py-4' scope="col">Product Image</th>
+                    <th className='py-4' scope="col">Product Description</th>
+                    <th className='py-4' scope="col">Product Price</th>
+                    <th className='py-4' scope="col">Add Product to Cart</th>
+                    <th className='py-4' scope="col">Delete product</th>
+                    </tr>
+                </thead>    
+                {/* PRINT ELEMENTS TO THE PRODUCTS LIST */}
             
+                <tbody>
                 {products.map((product, idx) => {
                     return( 
-                    <li key={product.id}> <img src={product.image} style={{width: "1.5rem"}} alt="..."></img>{product.title} {product.price} 
-                    <button className='btn btn-outline-success m-1' onClick={ () => addToCart(product.id)}> Add</button>  
-                    <button className='btn btn-outline-danger m-1' onClick={ () => deleteFromProducts(idx)}> Delete</button>  
-                    </li>
+                        <tr className='align-middle' key={product.id}> 
+                            <td><img src={product.image} style={{width: "4rem"}} alt="..."></img></td> 
+                            <td>{product.title}</td>
+                            <td>{product.price}</td>
+                            <td><button className='btn btn-outline-success m-1' onClick={ () => addToCart(product.id)}> Add</button></td>
+                            <td><button className='btn btn-outline-danger m-1' onClick={ () => deleteFromProducts(idx)}> Delete</button></td> 
+                        </tr>
                     )
                 })
                 }
+                </tbody>
             
-            </ul>
+            </table>
         }
 
         
