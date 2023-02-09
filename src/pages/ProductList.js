@@ -5,8 +5,9 @@ import CartContexts from '../contexts/CartContexts';
 
 const Products = () => {
 
-    const {products, setProducts} = useContext(ProductsContext);
+    const {products, setProducts, loading} = useContext(ProductsContext);
     const {setCartOfProducts} = useContext(CartContexts);
+    
 
     // FUNCTION THAT ADD ELEMENTS TO THE PRODUCTS LIST
     const formSubmit = (event) => {
@@ -58,21 +59,29 @@ const Products = () => {
         </form>
 
         <hr/>
+       
         
+        {loading 
+            ? 
+            <h1>Loading
+            </h1>
+            :
+            <ul>
+                {/* PRINT ELEMENTS TO THE PRODUCTS LIST */}
 
-        <ul>
-            {/* PRINT ELEMENTS TO THE PRODUCTS LIST */}
-             {products.map((product, idx) => {
-                return( 
-                <li key={product.id}> {product.title} {product.price} 
-                <button className='btn btn-outline-success m-1' onClick={ () => addToCart(product.id)}> Add</button>  
-                <button className='btn btn-outline-danger m-1' onClick={ () => deleteFromProducts(idx)}> Delete</button>  
-                 </li>
-                )
-            })
-            }
-        
-        </ul>
+            
+                {products.map((product, idx) => {
+                    return( 
+                    <li key={product.id}> {product.title} {product.price} 
+                    <button className='btn btn-outline-success m-1' onClick={ () => addToCart(product.id)}> Add</button>  
+                    <button className='btn btn-outline-danger m-1' onClick={ () => deleteFromProducts(idx)}> Delete</button>  
+                    </li>
+                    )
+                })
+                }
+            
+            </ul>
+        }
 
         <hr/>
 

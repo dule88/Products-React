@@ -7,18 +7,37 @@ export const ProductsProvider = ({children}) => {
     
 
         const [products, setProducts] = useState ([]);
+        const [loading, setLoading] = useState (false);
 
         useEffect(() => {
-          fetch('https://fakestoreapi.com/products?limit=5')
-          .then(res => res.json())
-          .then(result => {
-            setProducts(result);
-          })
-        }, [])
+          // setLoading(true);
+
+          // fetch('https://fakestoreapi.com/products?limit=5')
+          // .then(res => res.json())
+          // .then(result => {
+          //   setProducts(result);
+
+          // setLoading(false);  
+          
+          // })
+
+          (async () => {
+
+              setLoading(true);
+
+              const res = await fetch('https://fakestoreapi.com/products?limit=5');
+              const result = await res.json();
+              setProducts(result);
+
+              setLoading(false);
+
+            }
+          )();
+        }, []);
         
 
     return(
-        <ProductsContext.Provider value={{products, setProducts}}>
+        <ProductsContext.Provider value={{products, setProducts, loading}} >
             {children}
         </ProductsContext.Provider>
     )
