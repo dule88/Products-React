@@ -30,7 +30,7 @@ const CartOfProducts = () => {
               <th className='py-4' scope="col">Product Image</th>
               <th className='py-4' scope="col">Product Description</th>
               <th className='py-4' scope="col">Product Price</th>
-              <th className='py-4' scope="col">Delete product</th>
+              <th className='py-4' scope="col">Delete</th>
               </tr>
           </thead>    
 
@@ -43,7 +43,7 @@ const CartOfProducts = () => {
                    <td><img src={c.image} style={{width: "4rem"}} alt="..."></img></td>
                    <td>{c.title}</td>
                    <td>{c.price} {'EUR'}</td>
-                   <td><button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromCart(idx)}> Delete</button></td>
+                   <td><button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromCart(idx)}><i class="fa-solid fa-trash-can"></i></button></td>
                 </tr> 
                 
               )})
