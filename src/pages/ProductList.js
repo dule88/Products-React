@@ -48,9 +48,9 @@ const Products = () => {
     
 
   return (
-    <div className='my-4'>
+    <div className='my-1'>
 
-        <h1 className='my-4 text-white'>Products</h1>
+        <h1 className='my-3 mb-5 text-white'>Products</h1>
 
         {/* <form onSubmit={formSubmit} className='row g-3 align-items-center mx-5 '>
             <input className='col mx-1 form-control' type='text' placeholder='name' name='name'/>
@@ -84,11 +84,11 @@ const Products = () => {
                 {products.map((product, idx) => {
                     return( 
                         <tr className='align-middle' key={product.id}> 
-                            <td><img src={product.image} style={{width: "4rem"}} alt="..."></img></td> 
+                            <td><img src={product.image} style={{width: "3rem"}} alt="..."></img></td> 
                             <td>{product.title}</td>
                             <td>{product.price} {'EUR'}</td>
-                            <td><button className='btn btn-outline-success mx-2' onClick={ () => addToCart(product.id)}><i class="fa-solid fa-cart-plus"></i></button></td>
-                            <td><button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromProducts(idx)}><i class="fa-solid fa-trash-can"></i></button></td> 
+                            <td><button className='btn btn-outline-success mx-2' onClick={ () => addToCart(product.id)}><i className="fa-solid fa-cart-plus"></i></button></td>
+                            <td><button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromProducts(idx)}><i className="fa-solid fa-trash-can"></i></button></td> 
                         </tr>
                     )
                 })

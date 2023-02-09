@@ -17,9 +17,9 @@ const CartOfProducts = () => {
     }
 
   return (
-    <div className='my-4'>
+    <div className='my-1'>
         
-        <h1 className='my-4 text-white'>Cart</h1>
+        <h1 className='my-3 mb-5 text-white'>Cart</h1>
 
 
         <table className="table table-dark table-hover container">
@@ -40,10 +40,10 @@ const CartOfProducts = () => {
              {cartOfProducts.map((c, idx) => {
               return (
                 <tr className='align-middle' key={c.id}>
-                   <td><img src={c.image} style={{width: "4rem"}} alt="..."></img></td>
+                   <td><img src={c.image} style={{width: "3rem"}} alt="..."></img></td>
                    <td>{c.title}</td>
                    <td>{c.price} {'EUR'}</td>
-                   <td><button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromCart(idx)}><i class="fa-solid fa-trash-can"></i></button></td>
+                   <td><button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromCart(idx)}><i className="fa-solid fa-trash-can"></i></button></td>
                 </tr> 
                 
               )})

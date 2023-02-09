@@ -14,9 +14,9 @@ const Navbar = () => {
    
 
   return (
-    <nav className= "navbar navbar-expand-lg bg-dark py-3" >
+    <nav className= "navbar navbar-expand-lg bg-dark py-1" >
         <div className="container-fluid navbar-dark">
-        <Link className="navbar-brand" to="/">Products.App</Link>
+        <Link className="navbar-brand" to="/"><i className="fa-brands fa-cotton-bureau fa-2xl p-3"></i></Link>
         <button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
