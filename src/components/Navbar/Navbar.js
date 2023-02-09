@@ -1,6 +1,8 @@
+import './Navbar.css';
+
 import { useContext } from "react";
-import CartContexts from "../contexts/CartContexts";
-import ProductsContext from "../contexts/Products.Context";
+import CartContexts from "../../contexts/CartContexts";
+import ProductsContext from "../../contexts/Products.Context";
 import {Link} from 'react-router-dom'
 
 const Navbar = () => {
@@ -12,10 +14,10 @@ const Navbar = () => {
    
 
   return (
-    <nav className="navbar navbar-expand-lg bg-dark-subtle">
-        <div className="container-fluid">
+    <nav className= "navbar navbar-expand-lg bg-dark py-3" >
+        <div className="container-fluid navbar-dark">
         <Link className="navbar-brand" to="/">Products.App</Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">

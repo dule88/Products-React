@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import CartOfProducts from './pages/CartOfProducts';
 import ProductList from './pages/ProductList';
 import NotFound from './pages/NotFound.js';
