@@ -10,16 +10,6 @@ export const ProductsProvider = ({children}) => {
         const [loading, setLoading] = useState (false);
 
         useEffect(() => {
-          // setLoading(true);
-
-          // fetch('https://fakestoreapi.com/products?limit=5')
-          // .then(res => res.json())
-          // .then(result => {
-          //   setProducts(result);
-
-          // setLoading(false);  
-          
-          // })
 
           (async () => {
 

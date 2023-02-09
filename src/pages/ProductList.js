@@ -72,7 +72,7 @@ const Products = () => {
             
                 {products.map((product, idx) => {
                     return( 
-                    <li key={product.id}> {product.title} {product.price} 
+                    <li key={product.id}> <img src={product.image} style={{width: "1.5rem"}} alt="..."></img>{product.title} {product.price} 
                     <button className='btn btn-outline-success m-1' onClick={ () => addToCart(product.id)}> Add</button>  
                     <button className='btn btn-outline-danger m-1' onClick={ () => deleteFromProducts(idx)}> Delete</button>  
                     </li>

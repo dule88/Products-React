@@ -25,7 +25,7 @@ const CartOfProducts = () => {
        <ul>
              {cartOfProducts.map((c, idx) => {
               return (
-                <li key={c.id}> {c.id} {c.title} {c.price} 
+                <li key={c.id}> <img src={c.image} style={{width: "1.5rem"}} alt="..."></img>{c.id} {c.title} {c.price} 
                 <button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromCart(idx)}> Delete</button> 
                 </li> 
                 
