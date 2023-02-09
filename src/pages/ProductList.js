@@ -48,7 +48,7 @@ const Products = () => {
     
 
   return (
-    <div className='my-1'>
+    <div className='my-1 overflow-hidden'>
 
         <h1 className='my-3 mb-5 text-white'>Products</h1>
 
@@ -66,15 +66,15 @@ const Products = () => {
             <h1>Loading
             </h1>
             :
-            <table className="table table-dark table-hover container ">
+            <table className="table table-dark table-hover container mb-5 w-75">
 
 
                 <thead>
                     <tr>
-                    <th className='py-4' scope="col">Product Image</th>
-                    <th className='py-4' scope="col">Product Description</th>
-                    <th className='py-4' scope="col">Product Price</th>
-                    <th className='py-4' scope="col">Add to Cart</th>
+                    <th className='py-4' scope="col">Image</th>
+                    {/* <th className='py-4' scope="col">Product Description</th> */}
+                    <th className='py-4' scope="col">Product</th>
+                    <th className='py-4' scope="col">Add</th>
                     <th className='py-4' scope="col">Delete</th>
                     </tr>
                 </thead>    
@@ -85,7 +85,7 @@ const Products = () => {
                     return( 
                         <tr className='align-middle' key={product.id}> 
                             <td><img src={product.image} style={{width: "3rem"}} alt="..."></img></td> 
-                            <td>{product.title}</td>
+                            {/* <td>{product.title}</td> */}
                             <td>{product.price} {'EUR'}</td>
                             <td><button className='btn btn-outline-success mx-2' onClick={ () => addToCart(product.id)}><i className="fa-solid fa-cart-plus"></i></button></td>
                             <td><button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromProducts(idx)}><i className="fa-solid fa-trash-can"></i></button></td> 

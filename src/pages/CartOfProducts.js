@@ -22,14 +22,14 @@ const CartOfProducts = () => {
         <h1 className='my-3 mb-5 text-white'>Cart</h1>
 
 
-        <table className="table table-dark table-hover container">
+        <table className="table table-dark table-hover container mb-5 w-75">
 
 
           <thead>
               <tr>
-              <th className='py-4' scope="col">Product Image</th>
-              <th className='py-4' scope="col">Product Description</th>
-              <th className='py-4' scope="col">Product Price</th>
+              <th className='py-4' scope="col">Image</th>
+              {/* <th className='py-4' scope="col">Product Description</th> */}
+              <th className='py-4' scope="col">Price</th>
               <th className='py-4' scope="col">Delete</th>
               </tr>
           </thead>    
@@ -41,7 +41,7 @@ const CartOfProducts = () => {
               return (
                 <tr className='align-middle' key={c.id}>
                    <td><img src={c.image} style={{width: "3rem"}} alt="..."></img></td>
-                   <td>{c.title}</td>
+                   {/* <td>{c.title}</td> */}
                    <td>{c.price} {'EUR'}</td>
                    <td><button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromCart(idx)}><i className="fa-solid fa-trash-can"></i></button></td>
                 </tr> 
