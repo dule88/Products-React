@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import CartOfProducts from './pages/CartOfProducts';
 import ProductList from './pages/ProductList';
 import NotFound from './pages/NotFound.js';
-
+import Footer from './components/Navbar/Footer/Footer';
 
 
 const App =() => {
@@ -23,6 +23,7 @@ const App =() => {
         <Route path= '/*' element= {<NotFound/>}></Route> 
       </Routes>
 
+      <Footer/>
     </BrowserRouter>     
 
     </div>
