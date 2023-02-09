@@ -10,17 +10,17 @@ const Products = () => {
     
 
     // FUNCTION THAT ADD ELEMENTS TO THE PRODUCTS LIST
-    const formSubmit = (event) => {
-        event.preventDefault();
+    // const formSubmit = (event) => {
+    //     event.preventDefault();
 
-        let newProduct = {
-            id: products[products.length - 1].id + 1,
-            title: event.target.name.value,
-            price: event.target.price.value
-        }
+    //     let newProduct = {
+    //         id: products[products.length - 1].id + 1,
+    //         title: event.target.name.value,
+    //         price: event.target.price.value
+    //     }
 
-        setProducts(prev => [...prev, newProduct])
-    };
+    //     setProducts(prev => [...prev, newProduct])
+    // };
 
     // FUNCTION THAT ADD ELEMENTS FROM PRODUCTS LIST TO THE CART LIST
     const addToCart = (id, ) => {
@@ -52,11 +52,11 @@ const Products = () => {
 
         <h3 className='my-3'>Products</h3>
 
-        <form onSubmit={formSubmit} className='row g-3 align-items-center mx-5 '>
+        {/* <form onSubmit={formSubmit} className='row g-3 align-items-center mx-5 '>
             <input className='col mx-1 form-control' type='text' placeholder='name' name='name'/>
             <input className='col form-control' type='number' placeholder='price' name='price'/>
             <input type='submit' value='Add' className='btn btn-outline-success mx-2 col-auto'/>
-        </form>
+        </form> */}
 
         <hr/>
        
@@ -83,7 +83,7 @@ const Products = () => {
             </ul>
         }
 
-        <hr/>
+        
 
     </div>
   )

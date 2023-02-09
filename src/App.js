@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import CartOfProducts from './pages/CartOfProducts';
 import ProductList from './pages/ProductList';
 import NotFound from './pages/NotFound.js';
-import Footer from './components/Navbar/Footer/Footer';
+import Footer from './components/Footer/Footer';
 
 
 const App =() => {
