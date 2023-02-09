@@ -2,14 +2,14 @@ import React, { useContext } from 'react'
 import CartContexts from '../contexts/CartContexts';
 
 
-const Cart = () => {
+const CartOfProducts = () => {
 
-    const { cart, setCart } = useContext(CartContexts);
+    const { cartOfProducts, setCartOfProducts } = useContext(CartContexts);
 
 
     // FUNCTION THAT DELETE FROM THE CART LIST
     const deleteFromCart = (idx) => {
-      setCart(prev => {
+      setCartOfProducts(prev => {
         let fromCartToDelete = [...prev];
         fromCartToDelete.splice(idx, 1);
         return fromCartToDelete;
@@ -22,8 +22,8 @@ const Cart = () => {
         <h3>Cart</h3>
 
         {/* PRINT ELEMENTS TO THE CART */}
-        <ul>
-            {cart.map((c, idx) => {
+       <ul>
+             {cartOfProducts.map((c, idx) => {
               return (
                 <li key={c.id}> {c.id} {c.title} {c.price} 
                 <button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromCart(idx)}> Delete</button> 
@@ -38,4 +38,4 @@ const Cart = () => {
   )
 }
 
-export default Cart;
+export default CartOfProducts;

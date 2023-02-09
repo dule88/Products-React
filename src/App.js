@@ -1,27 +1,29 @@
 import './App.css';
-import Cart from './components/Cart';
-import Navbar from './components/Navbar';
-import Products from './components/Products';
-import { CartProvider } from './contexts/CartContexts';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-// import { NumberProvider } from './contexts/NumberContext';
-import { ProductsProvider } from './contexts/Products.Context';
+import Navbar from './components/Navbar';
+import CartOfProducts from './pages/CartOfProducts';
+import ProductList from './pages/ProductList';
+import NotFound from './pages/NotFound.js';
 
 
 
 const App =() => {
+
   return (
     <div className="App">
-      
-      <CartProvider>
-      <ProductsProvider>
      
-        <Navbar/>
-        <Products/>
-        <Cart/>
-  
-      </ProductsProvider>
-      </CartProvider>
+    <BrowserRouter>
+      <Navbar/>
+      
+      <Routes>
+        <Route path= '/' element= {<ProductList/>}></Route>
+        <Route path= '/productList' element= {<ProductList/>}></Route>
+        <Route path='/cartOfProducts' element= {<CartOfProducts/>}></Route>
+        <Route path= '/*' element= {<NotFound/>}></Route> 
+      </Routes>
+
+    </BrowserRouter>     
 
     </div>
   );

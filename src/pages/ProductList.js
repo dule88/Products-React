@@ -6,7 +6,7 @@ import CartContexts from '../contexts/CartContexts';
 const Products = () => {
 
     const {products, setProducts} = useContext(ProductsContext);
-    const {cart, setCart} = useContext(CartContexts)
+    const {setCartOfProducts} = useContext(CartContexts);
 
     // FUNCTION THAT ADD ELEMENTS TO THE PRODUCTS LIST
     const formSubmit = (event) => {
@@ -22,17 +22,18 @@ const Products = () => {
     };
 
     // FUNCTION THAT ADD ELEMENTS FROM PRODUCTS LIST TO THE CART LIST
-    const addToCart = (id) => {
+    const addToCart = (id, ) => {
+        
         const product = products.filter(p => {
             if(p.id == id) {
                 return p;
             }
         })[0];
 
-        setCart(prev => [...prev, product]);
+        setCartOfProducts(prev => [...prev, product]);
     }
 
-     // FUNCTION THAT DELETE ELEMENTS FROM PRODUCTS LIST 
+    //  FUNCTION THAT DELETE ELEMENTS FROM PRODUCTS LIST 
      const deleteFromProducts = (idx) => {
 
         setProducts(prev => {
@@ -61,12 +62,12 @@ const Products = () => {
 
         <ul>
             {/* PRINT ELEMENTS TO THE PRODUCTS LIST */}
-            {products.map((product, idx) => {
+             {products.map((product, idx) => {
                 return( 
                 <li key={product.id}> {product.title} {product.price} 
                 <button className='btn btn-outline-success m-1' onClick={ () => addToCart(product.id)}> Add</button>  
                 <button className='btn btn-outline-danger m-1' onClick={ () => deleteFromProducts(idx)}> Delete</button>  
-                </li>
+                 </li>
                 )
             })
             }
