@@ -17,22 +17,41 @@ const CartOfProducts = () => {
     }
 
   return (
-    <div>
+    <div className='my-4'>
         
-        <h3>Cart</h3>
+        <h1 className='my-4 text-white'>Cart</h1>
+
+
+        <table className="table table-dark table-hover container">
+
+
+          <thead>
+              <tr>
+              <th className='py-4' scope="col">Product Image</th>
+              <th className='py-4' scope="col">Product Description</th>
+              <th className='py-4' scope="col">Product Price</th>
+              <th className='py-4' scope="col">Delete product</th>
+              </tr>
+          </thead>    
+
 
         {/* PRINT ELEMENTS TO THE CART */}
-       <ul>
+       <tbody>
              {cartOfProducts.map((c, idx) => {
               return (
-                <li key={c.id}> <img src={c.image} style={{width: "1.5rem"}} alt="..."></img>{c.id} {c.title} {c.price} 
-                <button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromCart(idx)}> Delete</button> 
-                </li> 
+                <tr className='align-middle' key={c.id}>
+                   <td><img src={c.image} style={{width: "4rem"}} alt="..."></img></td>
+                   <td>{c.title}</td>
+                   <td>{c.price} {'EUR'}</td>
+                   <td><button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromCart(idx)}> Delete</button></td>
+                </tr> 
                 
               )})
              
             }
-        </ul>
+        </tbody>
+
+        </table>
     
     </div>
   )

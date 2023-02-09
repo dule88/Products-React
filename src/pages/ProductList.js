@@ -48,9 +48,9 @@ const Products = () => {
     
 
   return (
-    <div>
+    <div className='my-4'>
 
-        <h3 className='my-3'>Products</h3>
+        <h1 className='my-4 text-white'>Products</h1>
 
         {/* <form onSubmit={formSubmit} className='row g-3 align-items-center mx-5 '>
             <input className='col mx-1 form-control' type='text' placeholder='name' name='name'/>
@@ -58,7 +58,7 @@ const Products = () => {
             <input type='submit' value='Add' className='btn btn-outline-success mx-2 col-auto'/>
         </form> */}
 
-        <hr/>
+        
        
         
         {loading 
@@ -86,7 +86,7 @@ const Products = () => {
                         <tr className='align-middle' key={product.id}> 
                             <td><img src={product.image} style={{width: "4rem"}} alt="..."></img></td> 
                             <td>{product.title}</td>
-                            <td>{product.price}</td>
+                            <td>{product.price} {'EUR'}</td>
                             <td><button className='btn btn-outline-success m-1' onClick={ () => addToCart(product.id)}> Add</button></td>
                             <td><button className='btn btn-outline-danger m-1' onClick={ () => deleteFromProducts(idx)}> Delete</button></td> 
                         </tr>
