@@ -1,4 +1,4 @@
-import './Navbar.css';
+import styles from './Navbar.module.css';
 
 import { useContext } from "react";
 import CartContexts from "../../contexts/CartContexts";
@@ -20,6 +20,7 @@ const Navbar = () => {
         <button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
+
         <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
                 <li className="nav-item">
@@ -34,7 +35,21 @@ const Navbar = () => {
                 <li className="nav-item">
                     <Link className="nav-link active" aria-current="page" to="#"></Link>
                 </li>
+                <li>
+                    
+                </li>
             </ul>
+
+            <form className="container-fluid ms-2 d-flex w-100 p">
+                        <div className="input-group d-flex justify-content-end">
+                            <span className="input-group-text bg-dark border-secondary text-white-50 " id={styles.pointer} ><i className="fa-solid fa-magnifying-glass"></i></span>
+                            <input type="text" className="form-control bg-dark border-secondary text-white" placeholder="Search..." aria-label="Search" id="searchInput" aria-describedby="basic-addon1" />
+                        </div>
+
+                        <span className="text-white-50 ms-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i className="bi bi-list-check fs-3 pointer" ></i></span>
+                        <span className="counter d-flex align-items-center justify-content-center" id="counter"></span>
+            </form>
+
         </div>
         </div>
     </nav>
