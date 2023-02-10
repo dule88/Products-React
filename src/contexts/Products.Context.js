@@ -15,7 +15,7 @@ export const ProductsProvider = ({children}) => {
 
               setLoading(true);
 
-              const res = await fetch('https://fakestoreapi.com/products?limit=5');
+              const res = await fetch('https://fakestoreapi.com/products');
               const result = await res.json();
               setProducts(result);
 
