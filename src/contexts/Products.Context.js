@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useMemo } from "react";
 
 const ProductsContext = createContext();
 
@@ -8,6 +8,7 @@ export const ProductsProvider = ({children}) => {
 
         const [products, setProducts] = useState ([]);
         const [loading, setLoading] = useState (false);
+        const [searchTerm, setSearchTerm] = useState('');
 
         useEffect(() => {
 
@@ -25,9 +26,19 @@ export const ProductsProvider = ({children}) => {
           )();
         }, []);
         
+        // Regular Expression used in a function for filtering the products from the list.
+        const regrx = new RegExp(searchTerm, 'gi');
+
+        const searchResult = useMemo (() => {
+          return (
+            products.filter(product => product.title.match(regrx))
+          );
+        
+          
+        }, [searchTerm, products]);
 
     return(
-        <ProductsContext.Provider value={{products, setProducts, loading}} >
+        <ProductsContext.Provider value={{products, setProducts, loading, searchTerm, setSearchTerm, searchResult}} >
             {children}
         </ProductsContext.Provider>
     )

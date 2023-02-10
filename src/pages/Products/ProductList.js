@@ -1,26 +1,15 @@
 import React, {useContext} from 'react'
-import ProductsContext from '../contexts/Products.Context';
-import CartContexts from '../contexts/CartContexts';
+import ProductsContext from '../../contexts/Products.Context';
+import CartContexts from '../../contexts/CartContexts';
+
+import './Products.css'
 
 
 const Products = () => {
 
-    const {products, setProducts, loading} = useContext(ProductsContext);
+    const {products, setProducts, loading, searchTerm, setSearchTerm, searchResult} = useContext(ProductsContext);
     const {setCartOfProducts} = useContext(CartContexts);
     
-
-    // FUNCTION THAT ADD ELEMENTS TO THE PRODUCTS LIST
-    // const formSubmit = (event) => {
-    //     event.preventDefault();
-
-    //     let newProduct = {
-    //         id: products[products.length - 1].id + 1,
-    //         title: event.target.name.value,
-    //         price: event.target.price.value
-    //     }
-
-    //     setProducts(prev => [...prev, newProduct])
-    // };
 
     // FUNCTION THAT ADD ELEMENTS FROM PRODUCTS LIST TO THE CART LIST
     const addToCart = (id, ) => {
@@ -50,15 +39,16 @@ const Products = () => {
   return (
     <div className='my-1 overflow-hidden'>
 
-        <h1 className='my-3 mb-5 text-white'>Products</h1>
+        <h1 className='my-3 mb-3 text-white'>Products</h1>
 
-        {/* <form onSubmit={formSubmit} className='row g-3 align-items-center mx-5 '>
-            <input className='col mx-1 form-control' type='text' placeholder='name' name='name'/>
-            <input className='col form-control' type='number' placeholder='price' name='price'/>
-            <input type='submit' value='Add' className='btn btn-outline-success mx-2 col-auto'/>
-        </form> */}
 
-        
+
+            <form className="container-fluid mb-5 d-flex w-75">
+                 <div className="input-group d-flex justify-content-end">
+                    <span className="pe-auto input-group-text bg-dark border-secondary text-white-50"  ><i style={{cursor: 'pointer'}} className="fa-solid fa-magnifying-glass"></i></span>
+                    <input  type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="form-control bg-dark border-secondary text-white" placeholder="Search..."   aria-describedby="basic-addon1"/>
+                    </div> 
+            </form>
        
         
         {loading 
@@ -73,7 +63,7 @@ const Products = () => {
                     <tr>
                     <th className='py-4' scope="col">Image</th>
                     {/* <th className='py-4' scope="col">Product Description</th> */}
-                    <th className='py-4' scope="col">Product</th>
+                    <th className='py-4' scope="col">Price</th>
                     <th className='py-4' scope="col">Add</th>
                     <th className='py-4' scope="col">Delete</th>
                     </tr>
@@ -81,7 +71,7 @@ const Products = () => {
                 {/* PRINT ELEMENTS TO THE PRODUCTS LIST */}
             
                 <tbody>
-                {products.map((product, idx) => {
+                {searchResult.map((product, idx) => {
                     return( 
                         <tr className='align-middle' key={product.id}> 
                             <td><img src={product.image} style={{width: "3rem"}} alt="..."></img></td> 
