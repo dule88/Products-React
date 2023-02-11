@@ -37,7 +37,7 @@ const Products = () => {
     
 
   return (
-    <div className='my-1 overflow-hidden'>
+    <div className='my-1 overflow-auto'>
 
         <h1 className='my-3 mb-3 text-white'>Products</h1>
 
@@ -74,8 +74,8 @@ const Products = () => {
                 {searchResult.map((product, idx) => {
                     return( 
                         <tr className='align-middle' key={product.id}> 
-                            <td><img src={product.image} style={{width: "3rem"}} alt="..."></img></td> 
-                            {/* <td>{product.title}</td> */}
+                            <td><img src={product.category.image} style={{width: "5rem"}} alt="..."></img></td> 
+                            {/* <td>{product.category.name}</td> */}
                             <td>{product.price} {'EUR'}</td>
                             <td><button className='btn btn-outline-success mx-2' onClick={ () => addToCart(product.id)}><i className="fa-solid fa-cart-plus"></i></button></td>
                             <td><button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromProducts(idx)}><i className="fa-solid fa-trash-can"></i></button></td> 

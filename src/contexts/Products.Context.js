@@ -16,7 +16,7 @@ export const ProductsProvider = ({children}) => {
 
               setLoading(true);
 
-              const res = await fetch('https://fakestoreapi.com/products');
+              const res = await fetch('https://api.escuelajs.co/api/v1/products');
               const result = await res.json();
               setProducts(result);
 
@@ -31,7 +31,7 @@ export const ProductsProvider = ({children}) => {
 
         const searchResult = useMemo (() => {
           return (
-            products.filter(product => product.title.match(regrx))
+            products.filter(product => product.category.name.match(regrx))
           );
         
           

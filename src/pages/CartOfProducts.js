@@ -40,7 +40,7 @@ const CartOfProducts = () => {
              {cartOfProducts.map((c, idx) => {
               return (
                 <tr className='align-middle' key={c.id}>
-                   <td><img src={c.image} style={{width: "3rem"}} alt="..."></img></td>
+                   <td><img src={c.category.image} style={{width: "5rem"}} alt="..."></img></td>
                    {/* <td>{c.title}</td> */}
                    <td>{c.price} {'EUR'}</td>
                    <td><button className='btn btn-outline-danger mx-2' onClick={ () => deleteFromCart(idx)}><i className="fa-solid fa-trash-can"></i></button></td>
