@@ -1,0 +1,17 @@
+.paginationNav {
+    margin: 3rem auto;
+    width: 70rem;
+    max-width: 65%;
+    padding: 1rem;
+}
+
+#paginationFix {
+    color: whitesmoke;
+    background-color: #393250;
+
+}
+
+#paginationFix:hover {
+    cursor: pointer;
+    background-color: black;
+}
