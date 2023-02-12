@@ -5,12 +5,12 @@ import CartContexts from '../../contexts/CartContexts';
 import Pagination from '../../components/Pagination/Pagination';
 
 
-import styles from './Products.module.css';
+
 
 
 const Products = () => {
 
-    const {products, setProducts, loading, searchTerm, setSearchTerm, searchResult, setCurrentPage, productPerPage} = useContext(ProductsContext);
+    const {products, setProducts, searchTerm, setSearchTerm, searchResult, setCurrentPage, productPerPage} = useContext(ProductsContext);
     const {setCartOfProducts} = useContext(CartContexts);
     
 
@@ -58,14 +58,7 @@ return (
             </form>
        
         
-        {loading 
-            ? 
-            <div className={styles.center}>
-                <div className={styles.ring}></div>
-                <span>Loading...</span>
-            </div>
-            
-            :
+        
             <table className="table table-dark table-hover container mb-5 w-75">
 
 
@@ -96,8 +89,7 @@ return (
                 </tbody>
             
             </table>
-        }
-
+        
         <Pagination
         productPerPage={productPerPage} 
         totalProducts={products.length} 
