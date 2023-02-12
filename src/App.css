@@ -14,12 +14,13 @@
 
 h1 {
     color: whitesmoke;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.7);
     margin: auto;
-    padding: 1rem 0;
+    padding: 1rem;
     font-size: 3rem;
     border-radius: 100%;
-    max-width: 20%;
+    max-width: 90%;
+    
     
 }
 
