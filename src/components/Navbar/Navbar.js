@@ -37,10 +37,10 @@ const Navbar = () => {
                     <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="productList">Products({print()})</Link>
+                    <Link className="nav-link" to="/productList">Products({print()})</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="cartOfProducts">Cart({cartOfProducts.length})</Link>
+                    <Link className="nav-link" to="/cartOfProducts">Cart({cartOfProducts.length})</Link>
                 </li>
             </ul>
         </div>

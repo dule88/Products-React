@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import {useContext} from 'react'
 
 import ProductsContext from './contexts/Products.Context';
@@ -9,6 +9,8 @@ import CartOfProducts from './pages/CartOfProducts';
 import ProductList from './pages/Products/ProductList';
 import NotFound from './pages/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
+
+
 
 
 
@@ -29,7 +31,7 @@ const App =() => {
         <span>Loading...</span>
       </div>
       :
-      <BrowserRouter>
+        <>
         <Navbar/>
           
         <Routes>
@@ -40,7 +42,7 @@ const App =() => {
         </Routes>
           
         <Footer/>
-      </BrowserRouter>     
+        </>
 
       }
     </div>
