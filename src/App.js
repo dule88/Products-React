@@ -8,6 +8,10 @@ import NotFound from './pages/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 
 
+
+
+
+
 const App =() => {
 
   return (
@@ -22,7 +26,7 @@ const App =() => {
         <Route path='/cartOfProducts' element= {<CartOfProducts/>}></Route>
         <Route path= '/*' element= {<NotFound/>}></Route> 
       </Routes>
-
+      
       <Footer/>
     </BrowserRouter>     
 

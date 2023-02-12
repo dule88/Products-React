@@ -2,12 +2,15 @@ import React, {useContext} from 'react'
 import ProductsContext from '../../contexts/Products.Context';
 import CartContexts from '../../contexts/CartContexts';
 
+import Pagination from '../../components/Pagination/Pagination';
+
+
 import './Products.css'
 
 
 const Products = () => {
 
-    const {products, setProducts, loading, searchTerm, setSearchTerm, searchResult} = useContext(ProductsContext);
+    const {products, setProducts, loading, searchTerm, setSearchTerm, searchResult, setCurrentPage, productPerPage} = useContext(ProductsContext);
     const {setCartOfProducts} = useContext(CartContexts);
     
 
@@ -34,9 +37,13 @@ const Products = () => {
 
       };
 
-    
 
-  return (
+ // CHANGE PAGE
+ const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+
+   
+return (
     <div className='my-1 overflow-auto'>
 
         <h1 className='my-3 mb-3 text-white'>Products</h1>
@@ -88,9 +95,14 @@ const Products = () => {
             </table>
         }
 
-        
+        <Pagination
+        productPerPage={productPerPage} 
+        totalProducts={products.length} 
+        paginate={paginate}/>
 
     </div>
+
+
   )
 }
 

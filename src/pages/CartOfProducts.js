@@ -2,6 +2,9 @@ import React, { useContext } from 'react'
 import CartContexts from '../contexts/CartContexts';
 
 
+
+
+
 const CartOfProducts = () => {
 
     const { cartOfProducts, setCartOfProducts } = useContext(CartContexts);

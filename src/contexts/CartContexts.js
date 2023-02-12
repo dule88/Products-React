@@ -10,6 +10,8 @@ export const CartProvider = ({children}) => {
 
         
 
+        
+
     return(
         <CartContexts.Provider value={{cartOfProducts, setCartOfProducts}}>
             {children}
