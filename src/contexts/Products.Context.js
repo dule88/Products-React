@@ -23,7 +23,7 @@ export const ProductsProvider = ({children}) => {
 
               setLoading(true);
 
-              const res = await fetch('https://api.escuelajs.co/api/v1/products?offset=10&limit=25');
+              const res = await fetch('https://fakestoreapi.com/products');
               const result = await res.json();
               setProducts(result);
 
@@ -47,7 +47,7 @@ export const ProductsProvider = ({children}) => {
 
         const searchResult = useMemo (() => {
           return (
-            currentProducts.filter(product => product.category.name.match(regrx))
+            currentProducts.filter(product => product.title.match(regrx))
           );
         
           

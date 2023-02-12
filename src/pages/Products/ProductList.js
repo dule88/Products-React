@@ -5,7 +5,7 @@ import CartContexts from '../../contexts/CartContexts';
 import Pagination from '../../components/Pagination/Pagination';
 
 
-import './Products.css'
+import styles from './Products.module.css';
 
 
 const Products = () => {
@@ -60,8 +60,11 @@ return (
         
         {loading 
             ? 
-            <h1>Loading
-            </h1>
+            <div className={styles.center}>
+                <div className={styles.ring}></div>
+                <span>Loading...</span>
+            </div>
+            
             :
             <table className="table table-dark table-hover container mb-5 w-75">
 
@@ -81,7 +84,7 @@ return (
                 {searchResult.map((product, idx) => {
                     return( 
                         <tr className='align-middle' key={product.id}> 
-                            <td><img src={product.category.image} style={{width: "5rem"}} alt="..."></img></td> 
+                            <td><img src={product.image} style={{width: "5rem"}} alt="..."></img></td> 
                             {/* <td>{product.category.name}</td> */}
                             <td>{product.price} {'EUR'}</td>
                             <td><button className='btn btn-outline-success mx-2' onClick={ () => addToCart(product.id)}><i className="fa-solid fa-cart-plus"></i></button></td>
